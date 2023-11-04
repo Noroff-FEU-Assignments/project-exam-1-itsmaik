@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  display: contents;
+}
+
+/* ==================================== Style CSS ================================== */
+
+h2,p,span {
+  color: black;
+}
+
+#read-more-btn a {
+  background-color: black;
+  color: black;
+}

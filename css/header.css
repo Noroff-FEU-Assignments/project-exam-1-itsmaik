@@ -1,0 +1,27 @@
+#logo {
+  color: white;
+  background-color: #272724;
+  height: 88px;
+  text-align: center;
+  padding-top: 1.5%;
+}
+
+#nav-bar {
+  background-color: white;
+  height: 65px;
+  padding-top: 1.5%;
+}
+
+#nav-bar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-bar li {
+  padding: 0 5%;
+}
+
+#nav-bar a {
+  color: black;
+}
