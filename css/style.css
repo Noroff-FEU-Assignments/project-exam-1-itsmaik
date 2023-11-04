@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -12,6 +12,7 @@ html {
 
 body {
   max-width: 1440px;
+  min-width: 375px;
   height: auto;
   margin: 0 auto;
   padding: 0;
@@ -24,13 +25,20 @@ a {
   display: contents;
 }
 
+ul {
+  list-style: none;
+}
 /* ==================================== Style CSS ================================== */
 
-h2,p,span {
+h2,h3,p,span {
   color: black;
 }
 
 #read-more-btn a {
   background-color: black;
   color: black;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
 }

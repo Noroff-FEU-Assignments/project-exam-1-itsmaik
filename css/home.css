@@ -1,20 +1,42 @@
-
+/* =====================================MAIN================================ */
 main {
   margin: 0 7%;
 }
 
-#carousel-text {
-  height: 166px;
+/* =====================================CAROUSEL================================ */
+#carousel-head-line {
+  height: 10vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#carousel {
-  height: 550px;
+#carousel-1 {
+  height: 35vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .carousel-card {
   display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+/* =====================================TRENDING================================ */
+#trending {
+  background-color: #D8E7EC;
+  height: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#trending-text {
+  width: 40%;
+  text-align: left;
+}
+
+#trendig-images img {
+  flex-direction: column;
 }
