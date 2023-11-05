@@ -7,33 +7,62 @@
   align-items: center;
 }
 
+.fa-solid {
+  font-size: 1.5rem;
+}
+
 #carousel-1 {
   margin: 0 7%;
   display: flex;
   justify-content: space-between;
 }
 
+.carousel-img {
+  margin: 6% 0;
+}
+
+#carousel-h2{
+  margin: 5% 0;
+}
+.carousel-h3 {
+  margin-bottom: 1%;
+}
+
 .carousel-card {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 6%;
 }
 
 /* =====================================TRENDING================================ */
 #trending {
   background-color: #D8E7EC;
   display: flex;
-  padding: 0 7%;
+  padding: 6% 7%;
 }
 
+#trending-h2 {
+  margin-bottom: 2%;
+}
+
+#trending-main-img {
+  margin: 8% 0;
+}
 
 #trending-text {
   width: fit-content;
   text-align: left;
+  padding-top: 7.8%;
+  padding-left: 6%;
+}
+
+.trending-images {
+  margin-bottom: 10.8%;
 }
 
 #trending-images {
-  height: fit-content;
+  padding: 7.8% 1%;
   display: flex;
   flex-direction: column;
 }
@@ -48,4 +77,10 @@
 
 #fashion-p, #fashion-span {
   color: white;
+}
+
+/* =====================================EDITORIALS================================ */
+#editorials {
+  margin: 0 7%;
+  display: flex;
 }

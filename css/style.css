@@ -12,6 +12,7 @@ html {
 
 body {
   max-width: 1440px;
+  min-width: 375px;
   height: auto;
   margin: 0 auto;
   padding: 0;
@@ -40,4 +41,22 @@ h2,h3,p,span {
 
 p {
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
+
+h1,h2,h3,span {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.btn-read-more {
+  width: fit-content;
+  background-color: black;
+  display: flex;
+  align-self: center;
+  color: white;
+  text-decoration: none;
+  padding: 3% 5%;
+  margin: 4% 0;
+}
+
