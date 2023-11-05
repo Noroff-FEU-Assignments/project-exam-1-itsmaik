@@ -1,18 +1,14 @@
-/* =====================================MAIN================================ */
-main {
-  margin: 0 7%;
-}
 
 /* =====================================CAROUSEL================================ */
 #carousel-head-line {
-  height: 10vw;
+  margin: 0 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 #carousel-1 {
-  height: 35vw;
+  margin: 0 7%;
   display: flex;
   justify-content: space-between;
 }
@@ -26,17 +22,30 @@ main {
 /* =====================================TRENDING================================ */
 #trending {
   background-color: #D8E7EC;
-  height: 40vw;
+  display: flex;
+  padding: 0 7%;
+}
+
+
+#trending-text {
+  width: fit-content;
+  text-align: left;
+}
+
+#trending-images {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================================TRENDING================================ */
+#fashion {
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#trending-text {
-  width: 40%;
-  text-align: left;
-}
-
-#trendig-images img {
-  flex-direction: column;
+#fashion-p, #fashion-span {
+  color: white;
 }
