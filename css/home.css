@@ -57,6 +57,22 @@
   padding-left: 6%;
 }
 
+#acessorize {
+  font-weight: 400;
+  letter-spacing: 1.12px;
+}
+
+#trending-title {
+  font-weight: 300;
+  font-size: 3rem;
+  padding: 6% 0;
+  color: black;
+}
+
+#trending-main-text {
+  line-height: 140%;
+}
+
 .trending-images {
   margin-bottom: 10.8%;
 }
@@ -67,20 +83,57 @@
   flex-direction: column;
 }
 
-/* =====================================TRENDING================================ */
+#white-btn {
+  background-color: white;
+  color: black;
+}
+
+/* =====================================FASHION================================ */
 #fashion {
   background-color: black;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
-#fashion-p, #fashion-span {
+#fashion-p, #fashion-title {
   color: white;
+  text-align: center;
+}
+
+#fashion-title {
+  margin: 4% 0 0.5% 0;
+  letter-spacing: 2.56px;
+  font-size: 2.5rem;
+}
+
+#fashion-p {
+  margin-bottom:4%;
+}
+
+#fashion-wrap {
+  padding: 0 7%;
+  margin-bottom: 7%;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* =====================================EDITORIALS================================ */
 #editorials {
   margin: 0 7%;
   display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+#editorial-head-line {
+  margin: 5% 0;
+  letter-spacing: 1.68px;
+}
+
+#editorial-images {
+  display: flex;
+}
+
+#editorial-img-1 {
+  margin-bottom: 6%;
 }
