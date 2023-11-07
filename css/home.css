@@ -11,6 +11,10 @@
   font-size: 1.5rem;
 }
 
+#prev, #next {
+  font-weight: 300;
+}
+
 #carousel-1 {
   margin: 0 7%;
   display: flex;
