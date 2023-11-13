@@ -20,9 +20,9 @@ class Header {
 }
 
 const navItems = [
-  { link: "#home", text: "ABOUT" },
-  { link: "#about", text: "CONTACT" },
-  { link: "#contact", text: "ALL POSTS" }
+  { link: "../pages/about.html", text: "ABOUT" },
+  { link: "../pages/contact.html", text: "CONTACT" },
+  { link: "../pages/post.html", text: "ALL POSTS" }
 ];
 
 const logoText = "MEN-IN-FASHION";
