@@ -1,5 +1,6 @@
 
 /* =====================================CAROUSEL================================ */
+
 #carousel-head-line {
   margin: 0 7%;
   display: flex;
@@ -7,12 +8,36 @@
   align-items: center;
 }
 
-.fa-solid {
-  font-size: 1.5rem;
+.carousel-arrows {
+  display: flex;
+  width: 12em;
+  justify-content: space-between;
 }
 
-#prev, #next {
-  font-weight: 300;
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  width: 6em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow-btn P {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.fa-chevron-left {
+  margin-right: 0.5em;
+}
+
+.fa-chevron-right {
+  margin-left: 0.5em;
+}
+
+.fa-solid {
+  font-size: 1.5rem;
 }
 
 #carousel-1 {
