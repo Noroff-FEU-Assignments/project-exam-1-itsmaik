@@ -1,0 +1,26 @@
+.main-post {
+  margin: 8% 7%;
+  height: 100%;
+}
+
+.all-post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 8%;
+  row-gap: 5%;
+}
+
+.all-post-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.all-post-card img {
+  margin-bottom: 5%;
+}
+
+.all-post-h3 {
+  margin-bottom: 1%;
+}
