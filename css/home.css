@@ -2,7 +2,7 @@
 /* =====================================CAROUSEL================================ */
 
 #carousel-head-line {
-  margin: 0 7%;
+  margin: 0 7vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@
 }
 
 #carousel-1 {
-  margin: 0 7%;
+  margin: 0 7vw;
   display: flex;
   justify-content: space-between;
 }
@@ -68,7 +68,7 @@
 #trending {
   background-color: #F2F2F2;
   display: flex;
-  padding: 6% 7%;
+  padding: 6% 7vw;
 }
 
 #trending-h2 {
@@ -136,11 +136,11 @@
 }
 
 #fashion-p {
-  margin-bottom:4%;
+  margin-bottom: 4%;
 }
 
 #fashion-wrap {
-  padding: 0 7%;
+  padding: 0 7vw;
   margin-bottom: 7%;
   display: flex;
   justify-content: space-between;
@@ -148,7 +148,7 @@
 
 /* =====================================EDITORIALS================================ */
 #editorials {
-  margin: 0 7%;
+  margin: 0 7vw;
   display: flex;
   flex-direction: column;
   margin-bottom: 10%;
