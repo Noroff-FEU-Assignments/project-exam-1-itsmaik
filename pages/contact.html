@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/contact.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
   <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
@@ -21,6 +22,59 @@
     <a href="/index.html"><div id="logo"></div></a>
     <div id="nav-bar"></div>
   </header>
+
+  <main class="main-contact">
+
+    <div class="contact-form">
+
+      <form action="submit-form-endpoint" method="POST">
+        
+        <h1>CONTACT US</h1>
+
+        <label for="name"></label>
+        <input type="text" placeholder="Name" id="name" name="name" required>
+
+        <label for="email"></label>
+        <input type="email" placeholder="E-mail" id="email" name="email" required>
+
+        <label for="message"></label>
+        <textarea placeholder="Message us..." id="message" name="message" rows="10" required></textarea>
+
+        <button type="submit">SEND</button>
+      </form>
+
+    </div>
+
+    <div class="more-content">
+      <div>
+        <h2 class="h2-more-content">FOR MORE CONTENT</h2>
+        <p>FOLLOW ME ON INSTAGRAM @meninfashion</p>
+      </div>
+
+      <div class="more-images">
+
+        <figure>
+          <img src="/images/render-post-cards/acessorize-card-render.png" alt="">
+        </figure>
+        <figure>
+          <img src="/images/render-post-cards/rain-card-render.png" alt="">
+        </figure>
+        <figure>
+          <img src="/images/render-post-cards/steal-card-render.png" alt="">
+        </figure>
+        <figure id="margin-right-0">
+          <img src="/images/render-post-cards/favorites-card-render.png" alt="">
+        </figure>
+      
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div id="footer"></div>
+  </footer>
   
 </body>
 </html>
