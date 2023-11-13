@@ -41,7 +41,7 @@
 
 /* =====================================TRENDING================================ */
 #trending {
-  background-color: #D8E7EC;
+  background-color: #F2F2F2;
   display: flex;
   padding: 6% 7%;
 }
@@ -67,10 +67,10 @@
 }
 
 #trending-title {
-  font-weight: 300;
-  font-size: 3rem;
+  font-weight: 400;
+  font-size: 2.7rem;
   padding: 6% 0;
-  color: black;
+  color: #FFA800;
 }
 
 #trending-main-text {
@@ -87,14 +87,14 @@
   flex-direction: column;
 }
 
-#white-btn {
-  background-color: white;
+#yellow-btn {
+  background-color: #FFA800;
   color: black;
 }
 
 /* =====================================FASHION================================ */
 #fashion {
-  background-color: black;
+  background-color: #303030;
   display: flex;
   flex-direction: column;
 }

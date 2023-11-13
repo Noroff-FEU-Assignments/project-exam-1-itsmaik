@@ -1,0 +1,71 @@
+
+.container-about-me {
+  display: flex;
+  margin: 0 7%;
+  padding: 4% 0;
+}
+
+.more-content {
+  padding: 225px 120px 120px 120px;
+}
+
+.container-about-me .title p:nth-child(1) {
+  color: #FFA800;
+  font-size: 2.5rem;
+  letter-spacing: 0.8px;
+}
+
+.container-about-me .title p:nth-child(2) {
+  color: transparent;
+  font-size: 2.8rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(12, 11, 7, 0.5);
+  letter-spacing: 0.88px;
+}
+
+
+.container-about-me .title p:nth-child(3) {
+  color: transparent;
+  font-size: 3.1rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:  rgba(12, 11, 7, 0.7);
+  letter-spacing: 0.96px;
+}
+
+.container-about-me .title p:nth-child(4) {
+  color: black;
+  font-size: 3.4rem;
+  letter-spacing: 1.04px;
+}
+
+.container-about-me .title p {
+  margin-bottom: 1.5%;
+  font-weight: 400;
+}
+
+.text-wrapper {
+  width: 80%;
+  margin: 5% 0;
+}
+
+.text-wrapper p {
+  font-weight: 400;
+}
+
+.list {
+  width: 55%;
+}
+
+.list-item {
+  display: flex;
+  margin-bottom: 10%;
+}
+
+.fa-solid {
+  color: #FFA800;
+  font-size: x-large;
+}
+
+.about-icon {
+  margin-right: 5%;
+}
