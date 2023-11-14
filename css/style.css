@@ -62,5 +62,10 @@ h2 {
   text-decoration: none;
   padding: 3% 5%;
   margin: 4% 0;
+  transition: transform 0.3s ease;
+}
+
+.btn-read-more:hover {
+  transform: scale(1.1);
 }
 

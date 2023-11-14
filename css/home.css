@@ -21,6 +21,11 @@
   background: none;
   border: none;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.1);
 }
 
 .arrow-btn P {
@@ -146,21 +151,38 @@
   justify-content: space-between;
 }
 
+.fashion-images {
+  transition: transform 0.3s ease;
+}
+
+.fashion-images:hover {
+  transform: scale(1.1);
+}
+
+
 /* =====================================EDITORIALS================================ */
-#editorials {
+.editorials {
   margin: 0 7vw;
   display: flex;
   flex-direction: column;
   margin-bottom: 10%;
 }
 
-#editorial-head-line {
+.editorial-head-line {
   margin: 5% 0;
   letter-spacing: 1.68px;
 }
 
-#editorial-images {
+.editorial-images-container {
   display: flex;
+}
+
+.editorial-images {
+  transition: transform 0.3s ease;
+}
+
+.editorial-images:hover {
+  transform: scale(1.05);
 }
 
 #editorial-img-1 {

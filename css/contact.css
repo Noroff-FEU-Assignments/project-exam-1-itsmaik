@@ -43,10 +43,11 @@ form button {
   border-radius: 5px;
   width: 10em;
   align-self: center;
+  transition: transform 0.3s ease;
 }
 
 form button:hover {
-  background-color: #0056b3;
+  transform: scale(1.1);
 }
 
 .more-content {
