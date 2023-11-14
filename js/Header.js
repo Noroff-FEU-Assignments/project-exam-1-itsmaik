@@ -22,7 +22,7 @@ class Header {
 const navItems = [
   { link: "../pages/about.html", text: "ABOUT" },
   { link: "../pages/contact.html", text: "CONTACT" },
-  { link: "../pages/post.html", text: "ALL POSTS" }
+  { link: "../pages/all-post.html", text: "ALL POSTS" }
 ];
 
 const logoText = "MEN-IN-FASHION";

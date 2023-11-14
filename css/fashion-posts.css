@@ -1,0 +1,111 @@
+
+.main-fashion-post {
+  background-color: #F2F2F2;
+  background-image: url(/images/fashion-post/fashion-post-bg.png);
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.fashion-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 1fr 0.2fr 1fr;
+  row-gap: 3em;
+  padding: 6em 7vw;
+  border-top: 3px inset rgb(0, 0, 0, 0.1);
+}
+
+.fashion-grid-container > * {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.fashion-content-text-1 {
+  grid-row-start: 3;
+  grid-column-start: 1;
+}
+
+.fashion-content-image-1 {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  transform: rotate(12deg);
+}
+
+.fashion-content-text-2 {
+  grid-row-start: 5;
+  grid-column-start: 2;
+}
+
+.fashion-content-image-2 {
+  grid-row-start: 5;
+  grid-column-start: 1;
+  transform: rotate(-12deg);
+}
+
+figure {
+  align-items: center;
+}
+
+figure img {
+  height:  -webkit-fill-available;
+  object-fit: cover;
+}
+
+.hero-fashion-text-container .hero-title p:nth-child(1) {
+  color: #FFA800;
+  font-size: 2.5rem;
+  letter-spacing: 0.8px;
+}
+
+.hero-fashion-text-container .hero-title p:nth-child(2) {
+  color: transparent;
+  font-size: 2.8rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(12, 11, 7, 0.5);
+  letter-spacing: 0.88px;
+}
+
+
+.hero-fashion-text-container .hero-title p:nth-child(3) {
+  color: transparent;
+  font-size: 3.1rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:  rgba(12, 11, 7, 0.7);
+  letter-spacing: 0.96px;
+}
+
+.hero-fashion-text-container .hero-title p:nth-child(4) {
+  color: black;
+  font-size: 2.2rem;
+  letter-spacing: 1.04px;
+  font-weight: 500;
+}
+
+.hero-fashion-text-container .hero-title p {
+  margin-bottom: 1.5%;
+  font-weight: 400;
+}
+
+.hero-text {
+  margin-top: 1.5rem;
+  max-width: 30em;
+}
+
+.fashion-content-text-2, .fashion-content-text-1 {
+  width: 30em;
+  justify-self: center;
+  line-height: 130%;
+}
+
+.fashion-content-text-2 p:nth-child(1) {
+  font-weight: 500;
+}
+
+.fashion-content-text-1 p:nth-child(1) {
+  font-weight: 500;
+}
+
+.hero-text p {
+  font-weight: 400;
+}
