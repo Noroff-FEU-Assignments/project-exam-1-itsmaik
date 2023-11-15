@@ -1,7 +1,7 @@
 
 /* =====================================CAROUSEL================================ */
 
-#carousel-head-line {
+.carousel-head-line {
   margin: 0 7vw;
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@
   font-size: 1.5rem;
 }
 
-#carousel-1 {
+.carousel-1 {
   margin: 0 7vw;
   display: flex;
   justify-content: space-between;
@@ -55,7 +55,7 @@
   margin: 6% 0;
 }
 
-#carousel-h2{
+.carousel-h2{
   margin: 5% 0;
 }
 .carousel-h3 {
@@ -123,28 +123,28 @@
 }
 
 /* =====================================FASHION================================ */
-#fashion {
+.fashion {
   background-color: #303030;
   display: flex;
   flex-direction: column;
 }
 
-#fashion-p, #fashion-title {
+.fashion-p, .fashion-title {
   color: white;
   text-align: center;
 }
 
-#fashion-title {
+.fashion-title {
   margin: 4% 0 0.5% 0;
   letter-spacing: 2.56px;
   font-size: 2.5rem;
 }
 
-#fashion-p {
+.fashion-p {
   margin-bottom: 4%;
 }
 
-#fashion-wrap {
+.fashion-wrap {
   padding: 0 7vw;
   margin-bottom: 7%;
   display: flex;
