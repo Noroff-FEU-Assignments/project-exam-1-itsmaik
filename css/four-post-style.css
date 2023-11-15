@@ -1,0 +1,80 @@
+.main-four-post-style {
+  background-color: #F2F2F2;
+  background-image: url(/images/fashion-post/fashion-post-bg.png);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 20%;
+}
+
+.four-post-style-content {
+  display: flex;
+  flex-direction: column;
+  padding: 6em 7vw;
+  border-top: 3px inset rgb(0, 0, 0, 0.1);
+  text-align: justify;
+}
+
+.hero-text-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15em;
+}
+
+.container-content-1, .container-content-2, 
+.container-content-3, .container-content-4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.style-content-text {
+  width: 30em;
+  align-self: center;
+}
+
+.hero-text-container .hero-title p:nth-child(1) {
+  color: #FFA800;
+  font-size: 2.5rem;
+  letter-spacing: 0.8px;
+}
+
+.hero-text-container .hero-title p:nth-child(2) {
+  color: transparent;
+  font-size: 2.8rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(12, 11, 7, 0.5);
+  letter-spacing: 0.88px;
+}
+
+
+.hero-text-container .hero-title p:nth-child(3) {
+  color: transparent;
+  font-size: 3.1rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:  rgba(12, 11, 7, 0.7);
+  letter-spacing: 0.96px;
+}
+
+.hero-text-container .hero-title p:nth-child(4) {
+  color: black;
+  font-size: 3.4rem;
+  letter-spacing: 1.04px;
+}
+
+.hero-text-container .hero-title p {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.style-content-text p:nth-child(1) {
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+.style-content-text p:nth-child(2) {
+  line-height: 1.2em;
+}
+
+.hero-text {
+  align-self: auto;
+  width: 33em;
+}
