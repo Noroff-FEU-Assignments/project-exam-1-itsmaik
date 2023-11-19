@@ -9,21 +9,20 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     return response.json();
   })
   .then(posts => {
+    if (posts.length === 0) return
+    
     const specificPost = posts[0];
-
     const postTitle = document.querySelector('.editorial-title .h1-editorial');
     const featuredHeroImage = document.querySelector('.featured-image img');
     const featuredImageText = document.querySelector('.featured-image #featured-image-text');
     const editorialText = document.querySelector('.editorial-text');
-    const editorialItems = document.querySelector(".editorial-items img")
-
+    const editorialGallery = document.querySelector('#editorial-gallery')
 
     /* Parse content.rendered from api response */
     const postMainText = specificPost.content.rendered;
     const parser = new DOMParser();
     const doc = parser.parseFromString(postMainText, 'text/html');
   
-
     if (specificPost) {
       if (postTitle) {
         postTitle.textContent = specificPost.title.rendered;
@@ -37,11 +36,9 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
       
           featuredHeroImage.src = featuredHeroImageSrc;
         }
-    }
-
+      }
       
       if (featuredImageText) {
-
         const featuredImageTextElement = doc.querySelector('.wp-element-caption').textContent;
 
         if(featuredImageTextElement) {
@@ -56,10 +53,30 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
           editorialText.textContent = mainPostTextElement; 
         } 
       }
+
+
+      if (editorialGallery) {
+        const editorialGalleryElements = doc.querySelectorAll('.editorial-items > figure > img');
+        console.log('editorialGalleryElements', editorialGalleryElements)
+        
+        editorialGalleryElements.forEach((img) => {
+          const imgElement = document.createElement('img');
+      
+          imgElement.src = img.src;
+      
+          editorialGallery.appendChild(imgElement);
+        });
+      }
+      
+      console.log('specificPost', specificPost)
+
     } else {
       console.error('Post not found or missing content');
     }
-
-
   })
-  .catch(error => console.error('Fetch error:', error));
+  .catch(error => {
+    throw new Error('Fetch Error:' + error)
+  }) 
+  .finally(() => {
+    document.querySelector('#loader-container').remove()
+  });

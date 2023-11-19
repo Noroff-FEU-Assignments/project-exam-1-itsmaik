@@ -22,7 +22,7 @@
   margin-bottom: 3%;
 }
 
-.featured-image{
+.featured-image {
   margin-bottom: 3%;
 }
 
@@ -46,7 +46,38 @@
 }
 
 .editorial-items img {
-  height: 100%;
+}
+
+
+/* Loader styles */
+#loader-container {
+  position: fixed;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #CCC;
+}
+
+#loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Adicione um estilo para esconder o loader quando não estiver em uso */
+#loader.hidden {
+  display: none;
 }
