@@ -1,4 +1,5 @@
-const postSlug = window.location.hash.substring(1);
+const params = new URLSearchParams(window.location.search);
+const postSlug = params.get('slug');
 
 fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSlug}`)
   .then(response => {
@@ -11,9 +12,10 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     const specificPost = posts[0];
 
     const postTitle = document.querySelector('.editorial-title .h1-editorial');
-    const featuredImage = document.querySelector('.featured-image img');
+    const featuredHeroImage = document.querySelector('.featured-image img');
     const featuredImageText = document.querySelector('.featured-image #featured-image-text');
     const editorialText = document.querySelector('.editorial-text');
+    const editorialItems = document.querySelector(".editorial-items img")
 
 
     /* Parse content.rendered from api response */
@@ -27,13 +29,17 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
         postTitle.textContent = specificPost.title.rendered;
       }
 
-      if (specificPost._embedded && specificPost._embedded['wp:featuredmedia']) {
-        const featuredImageSrc = specificPost._embedded['wp:featuredmedia'][0].source_url;
-        if (featuredImage) {
-          featuredImage.src = featuredImageSrc;
-        }
-      }
+      if (featuredHeroImage) {
+        const editorialHeroImageElement = doc.querySelector('.editorial-hero-image img');
 
+        if (editorialHeroImageElement && editorialHeroImageElement.src) {
+          const featuredHeroImageSrc = editorialHeroImageElement.src;
+      
+          featuredHeroImage.src = featuredHeroImageSrc;
+        }
+    }
+
+      
       if (featuredImageText) {
 
         const featuredImageTextElement = doc.querySelector('.wp-element-caption').textContent;

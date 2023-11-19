@@ -1,37 +1,36 @@
-import Header from "./Header.js";
+import Header from "./Header.js"
 
-/** Fetching Editorial Container **/
+// IDs or slugs of your specific posts
+const postIdentifiers = ['fw23-lookbook-carhartt', 'hinterland-lookbook-yoke', 'q23-lookbook-butter-goods'];
 
-fetch('https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(posts => {
-    console.log("posts", posts)
-    posts.forEach((post, index) => {
-      if (post._embedded && post._embedded['wp:featuredmedia']) {
-        const featuredImage = post._embedded['wp:featuredmedia'][index].source_url;
-
-        const imgElement = document.getElementById(`editorial-img-${index + 1}`);
-        if (imgElement) {
-          imgElement.src = featuredImage;
-        }
-
-        const anchorElement = document.querySelector(`.editorial-images-container #editorial-link-${index + 1}`);
-        if (anchorElement) {
-          anchorElement.href = `./pages/editorial.html#${post.slug}`;
-        }
+// Fetch and display each post
+postIdentifiers.forEach((postIdentifier, index) => {
+  fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postIdentifier}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    });
-  })
-  .catch(error => console.error('Fetch error:', error));
+      return response.json();
+    })
+    .then(posts => {
+      // Since we are fetching by slug, there should only be one post per fetch
+      const post = posts[0];
 
+      // Now assign the post details to the correct elements
+      const imgElement = document.getElementById(`editorial-img-${index + 1}`);
+      const anchorElement = document.getElementById(`editorial-link-${index + 1}`);
 
-/** Fetching 4-styles Container **/
+      if (imgElement && post._embedded['wp:featuredmedia']) {
+        imgElement.src = post._embedded['wp:featuredmedia'][0].source_url;
+      }
 
-
-
-/** Fetching Fashion Container **/
+      if (anchorElement) {
+        anchorElement.href = `./pages/editorial.html?slug=${post.slug}`;
+        anchorElement.addEventListener('click', () => {
+          // Here you can set the local storage or any other method to pass the slug to the editorial page
+          localStorage.setItem('currentPostSlug', post.slug);
+        });
+      }
+    })
+    .catch(error => console.error('Fetch error:', error));
+});
