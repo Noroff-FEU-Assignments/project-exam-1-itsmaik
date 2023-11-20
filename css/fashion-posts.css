@@ -11,7 +11,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 0.5fr 1fr 0.2fr 1fr;
   row-gap: 3em;
-  padding: 6em 7vw;
+  padding: 6em 7em;
   border-top: 3px inset rgb(0, 0, 0, 0.1);
 }
 

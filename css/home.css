@@ -2,7 +2,7 @@
 /* =====================================CAROUSEL================================ */
 
 .carousel-head-line {
-  margin: 0 7vw;
+  margin: 0 7em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +46,7 @@
 }
 
 .carousel-1 {
-  margin: 0 7vw;
+  margin: 0 7em;
   display: flex;
   justify-content: space-between;
 }
@@ -70,51 +70,42 @@
 }
 
 /* =====================================TRENDING================================ */
-#trending {
+.trending {
   background-color: #F2F2F2;
   display: flex;
-  padding: 6% 7vw;
+  padding: 6% 7em;
 }
 
-#trending-h2 {
+.trending-h2 {
   margin-bottom: 2%;
 }
 
 #trending-main-img {
   margin: 8% 0;
+  display: inline-flex;
 }
 
-#trending-text {
+.trending-text {
   width: fit-content;
   text-align: left;
-  padding-top: 7.8%;
+  padding-top: 6em;
   padding-left: 6%;
 }
 
-#acessorize {
+.acessorize {
   font-weight: 400;
   letter-spacing: 1.12px;
 }
 
-#trending-title {
+.trending-title {
   font-weight: 400;
   font-size: 2.3rem;
   padding: 2% 0;
   color: #FFA800;
 }
 
-#trending-main-text {
+.trending-main-text {
   line-height: 125%;
-}
-
-.trending-images {
-  margin-bottom: 10.8%;
-}
-
-#trending-images {
-  padding: 7.8% 1%;
-  display: flex;
-  flex-direction: column;
 }
 
 #yellow-btn {
@@ -145,7 +136,7 @@
 }
 
 .fashion-wrap {
-  padding: 0 7vw;
+  padding: 0 7em;
   margin-bottom: 7%;
   display: flex;
   justify-content: space-between;
@@ -162,7 +153,7 @@
 
 /* =====================================EDITORIALS================================ */
 .editorials {
-  margin: 0 7vw;
+  margin: 0 7em;
   display: flex;
   flex-direction: column;
   margin-bottom: 10%;

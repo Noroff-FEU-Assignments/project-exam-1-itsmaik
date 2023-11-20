@@ -45,7 +45,12 @@
   color: #000;
 }
 
+.editorial-items {
+  display: contents;
+}
+
 .editorial-items img {
+  width: -webkit-fill-available;
 }
 
 
