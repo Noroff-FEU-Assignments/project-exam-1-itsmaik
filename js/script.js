@@ -83,34 +83,31 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
     card.className = 'carousel-card';
     card.id = `${elementIdPrefix}-card-${index + 1}`;
 
-    // Create the image element for the card
     const image = document.createElement('img');
     image.className = 'carousel-img';
     image.id = `${elementIdPrefix}-img-${index + 1}`;
     image.src = post._embedded['wp:featuredmedia'][0].source_url;
     image.alt = post.title.rendered;
 
-    // Create other elements like h3, p, and anchor tag for 'Read More' button
+    
     const title = document.createElement('h3');
     title.className = 'carousel-h3';
-    title.textContent = 'TITLE'; // You can make this dynamic based on the post's content
+    title.textContent = 'TITLE';
 
     const paragraph = document.createElement('p');
     paragraph.className = 'carousel-p';
-    paragraph.textContent = 'DESCRIPTION'; // This should also be dynamic
+    paragraph.textContent = 'DESCRIPTION';
 
     const readMoreLink = document.createElement('a');
     readMoreLink.className = 'btn-read-more';
     readMoreLink.href = `${basePath}?slug=${post.slug}`;
     readMoreLink.textContent = 'READ MORE';
 
-    // Append the elements to the card
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(paragraph);
     card.appendChild(readMoreLink);
 
-    // Append the card to the carousel container
     carouselContainer.appendChild(card);
 
   });
@@ -165,7 +162,7 @@ function advanceCarousel() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // This ensures that your JavaScript runs after the DOM has fully loaded
+  
   const backButton = document.getElementById('prev-btn');
   const nextButton = document.getElementById('next-btn');
 
