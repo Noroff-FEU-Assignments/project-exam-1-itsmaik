@@ -53,6 +53,7 @@
 
 .carousel-img {
   margin: 6% 0;
+  max-height: 320px;
 }
 
 .carousel-h2{
