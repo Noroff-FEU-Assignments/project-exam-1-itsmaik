@@ -145,6 +145,8 @@ fetchAndDisplayPostsByCategory('10', 'fashion', 'asc', 'date', fashionElementIdP
 
 fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementIdPrefix, carouselBasePath );
 
+
+
 // CAROUSELLE
 function goBack() {
   if (currentCarouselIndex > 0) {

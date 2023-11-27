@@ -9,6 +9,7 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     return response.json();
   })
   .then(posts => {
+    console.log(posts);
     if (posts.length === 0) return
     
     const specificPost = posts[0];
