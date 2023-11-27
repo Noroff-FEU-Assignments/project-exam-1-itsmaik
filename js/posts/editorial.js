@@ -26,6 +26,7 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     if (specificPost) {
       if (postTitle) {
         postTitle.textContent = specificPost.title.rendered;
+        document.querySelector('title').textContent = specificPost.title.rendered
       }
 
       if (featuredHeroImage) {
