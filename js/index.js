@@ -70,6 +70,28 @@ function displayFashionPost(post, index, elementIdPrefix, basePath) {
   }
 }
 
+
+function displayTrendingPost(post, index, elementIdPrefix, basePath) {
+  const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
+  const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
+  const titleElement = document.getElementById(`${elementIdPrefix}-title-${index + 1}`);
+
+  if (imgElement && post._embedded['wp:featuredmedia']) {
+    imgElement.src = post._embedded['wp:featuredmedia'][0].source_url;
+  }
+
+  if (titleElement) {
+    titleElement.textContent = post.title.rendered;
+  }
+  console.log(titleElement)
+
+  if (anchorElement) {
+    anchorElement.href = `${basePath}?slug=${post.slug}`;
+  }
+}
+
+
+//--------------------------------CAROUSEL-POSTS----------------------------------
 const POSTS_PER_PAGE = 3;
 
 
@@ -117,7 +139,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
   });
 
   
-  const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
+  // const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
   const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
 
   // if (imgElement && post._embedded['wp:featuredmedia']) {
@@ -136,12 +158,16 @@ const editorialElementIdPrefix = 'editorial';
 const editorialBasePath = '../pages/editorial.html';
 const fashionElementIdPrefix = 'fashion';
 const fashionBasePath = '../pages/fashion-posts.html';
+const trendingElementIdPrefix = 'trending';
+const trendingBasePath = '../pages/four-post-style.html';
 const carouselElementIdPrefix = 'carousel';
 const carouselBasePath = '';
 
 fetchAndDisplayPostsByCategory('13', 'editorial', 'asc', 'date', editorialElementIdPrefix, editorialBasePath);
 
 fetchAndDisplayPostsByCategory('10', 'fashion', 'asc', 'date', fashionElementIdPrefix, fashionBasePath );
+
+fetchAndDisplayPostsByCategory('16', 'trending', 'asc', 'date', trendingElementIdPrefix, trendingBasePath);
 
 fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementIdPrefix, carouselBasePath );
 

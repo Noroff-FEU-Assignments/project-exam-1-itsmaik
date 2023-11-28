@@ -81,27 +81,26 @@
   margin-bottom: 2%;
 }
 
-#trending-main-img {
+#trending-img-1 {
   margin: 8% 0;
   display: inline-flex;
 }
 
 .trending-text {
-  width: fit-content;
+  width: 70%;
   text-align: left;
-  padding-top: 6em;
   padding-left: 6%;
+  padding-top: 3em;
 }
 
-.acessorize {
+/* .acessorize {
   font-weight: 400;
   letter-spacing: 1.12px;
-}
+} */
 
-.trending-title {
-  font-weight: 400;
+#trending-title-1 {
   font-size: 2.3rem;
-  padding: 2% 0;
+  padding: 2% 0%;
   color: #FFA800;
 }
 
@@ -109,9 +108,10 @@
   line-height: 125%;
 }
 
-#yellow-btn {
+.yellow-btn {
   background-color: #FFA800;
   color: black;
+  margin-top: 2.3em;
 }
 
 /* =====================================FASHION================================ */
