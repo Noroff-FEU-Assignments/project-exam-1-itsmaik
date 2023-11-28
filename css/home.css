@@ -93,10 +93,6 @@
   padding-top: 3em;
 }
 
-/* .acessorize {
-  font-weight: 400;
-  letter-spacing: 1.12px;
-} */
 
 #trending-title-1 {
   font-size: 2.3rem;
@@ -104,14 +100,14 @@
   color: #FFA800;
 }
 
-.trending-main-text {
+#trending-text-1 {
   line-height: 125%;
 }
 
 .yellow-btn {
   background-color: #FFA800;
   color: black;
-  margin-top: 2.3em;
+  margin-top: 1.2em;
 }
 
 /* =====================================FASHION================================ */

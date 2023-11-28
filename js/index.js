@@ -75,6 +75,7 @@ function displayTrendingPost(post, index, elementIdPrefix, basePath) {
   const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
   const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
   const titleElement = document.getElementById(`${elementIdPrefix}-title-${index + 1}`);
+  const textElement = document.getElementById(`${elementIdPrefix}-text-${index + 1}`);
 
   if (imgElement && post._embedded['wp:featuredmedia']) {
     imgElement.src = post._embedded['wp:featuredmedia'][0].source_url;
@@ -83,7 +84,17 @@ function displayTrendingPost(post, index, elementIdPrefix, basePath) {
   if (titleElement) {
     titleElement.textContent = post.title.rendered;
   }
-  console.log(titleElement)
+
+  if (textElement) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(post.content.rendered, 'text/html');
+    const heroTextElement = doc.querySelector('.four-post-hero-text');
+
+    if (heroTextElement) {
+     textElement.textContent = heroTextElement.textContent;
+    }
+  }
+  console.log(textElement)
 
   if (anchorElement) {
     anchorElement.href = `${basePath}?slug=${post.slug}`;
