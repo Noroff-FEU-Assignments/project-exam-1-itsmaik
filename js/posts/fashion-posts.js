@@ -27,6 +27,7 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     if (specificPost) {
       if (postHeader) {
         const postHeaderContent = doc.querySelector('.fashion-heading-title').textContent;
+        document.querySelector('title').textContent = specificPost.title.rendered
 
 
         if (postHeaderContent) {
