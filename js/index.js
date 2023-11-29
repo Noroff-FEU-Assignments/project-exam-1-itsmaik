@@ -116,6 +116,11 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
  
 
   postsToShow.forEach((post, index) => {
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(post.content.rendered, 'text/html');
+    let paragraphElement = doc.querySelector('.description').textContent;
+
     const card = document.createElement('div');
     card.className = 'carousel-card';
     card.id = `${elementIdPrefix}-card-${index + 1}`;
@@ -129,11 +134,11 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
     
     const title = document.createElement('h3');
     title.className = 'carousel-h3';
-    title.textContent = 'TITLE';
+    title.textContent = post.title.rendered;
 
     const paragraph = document.createElement('p');
     paragraph.className = 'carousel-p';
-    paragraph.textContent = 'DESCRIPTION';
+    paragraph.textContent = `${paragraphElement}`;
 
     const readMoreLink = document.createElement('a');
     readMoreLink.className = 'btn-read-more';
