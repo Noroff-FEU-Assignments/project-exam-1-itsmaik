@@ -14,6 +14,7 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     if(posts.length === 0) return
 
     const specificPost = posts[0];
+    const postHeaderTitle = document.querySelector('.header-title')
     const postHeader = document.querySelector('.hero-title-p');
     const postHeroText = document.querySelector('.hero-text p');
     const postContent = document.querySelector('.four-post-style-content');
@@ -24,6 +25,16 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     const doc = parser.parseFromString(postMainText, 'text/html');
 
     if (specificPost) {
+
+      if (postHeaderTitle) {
+        const postHeaderTitleElement = specificPost.title.rendered;
+
+        if (postHeaderTitleElement) {
+          postHeaderTitle.textContent = postHeaderTitleElement;
+        }
+      }
+
+
       if (postHeader) {
         const postHeaderContent = doc.querySelector('.four-post-header-title').textContent;
         document.querySelector('title').textContent = specificPost.title.rendered

@@ -20,8 +20,7 @@
   margin-bottom: 15em;
 }
 
-.container-content-1, .container-content-2, 
-.container-content-3, .container-content-4 {
+.container-content-css {
   display: flex;
   justify-content: space-between;
 }
@@ -65,16 +64,30 @@
   font-weight: 400;
 }
 
-.style-content-text p:nth-child(1) {
+.style-content-title {
   font-weight: 400;
   line-height: 1.2em;
+  margin-bottom: 1em;
 }
 
-.style-content-text p:nth-child(2) {
+.style-content-tex {
   line-height: 1.2em;
 }
 
 .hero-text {
   align-self: auto;
-  width: 33em;
+  width: 35em;
+}
+
+.container-content-1, .container-content-2,
+.container-content-3, .container-content-4 {
+  align-items: center;
+}
+
+.header-title {
+  color: #ad9766;
+  font-size: 2.5rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.8rem;
+  line-height: 99%;
 }
