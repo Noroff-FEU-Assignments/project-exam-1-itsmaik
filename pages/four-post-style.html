@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="/css/four-post-style.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/modal.css">
   <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
   <script defer type="module" src="/js/script.js"></script>
+  <script defer type="module" src="/js/utils/modal.js"></script>
   <script defer type="module" src="/js/posts/four-post-style.js"></script>
   <!-- Hotjar Tracking Code for https://starlit-macaron-409bb8.netlify.app/ -->
 <script>
@@ -57,7 +59,7 @@
 
       <div class="container-content-1 container-content-css">
 
-        <figure class="style-content-image-1">
+        <figure class="style-content-image-1 modal-img-style">
           <img src="/images/four-post-style/rainy-day-post/rainy-1.png" alt="">
         </figure>
 
@@ -75,7 +77,7 @@
           <p class="style-content-text" ></p>
         </div>
 
-        <figure class="style-content-image-2">
+        <figure class="style-content-image-2 modal-img-style">
           <img src="" alt="">
         </figure>
 
@@ -83,7 +85,7 @@
 
       <div class="container-content-3 container-content-css">
 
-        <figure class="style-content-image-3">
+        <figure class="style-content-image-3 modal-img-style">
           <img src="" alt="">
         </figure>
 
@@ -102,7 +104,7 @@
           <p class="style-content-text" ></p>
         </div>
 
-        <figure class="style-content-image-4">
+        <figure class="style-content-image-4 modal-img-style">
           <img src="" alt="">
         </figure>
 
@@ -111,6 +113,12 @@
     </div>
 
   </main>
+
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="caption"></div>
+  </div>
 
   <footer>
     <div id="footer"></div>

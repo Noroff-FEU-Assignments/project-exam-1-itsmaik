@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="/css/fashion-posts.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/modal.css">
   <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
   <script defer type="module" src="/js/script.js"></script>
+  <script defer type="module" src="/js/utils/modal.js"></script>
   <script defer type="module" src="/js/posts/fashion-posts.js"></script>
   <!-- Hotjar Tracking Code for https://starlit-macaron-409bb8.netlify.app/ -->
 <script>
@@ -39,7 +41,7 @@
 
     <div class="fashion-grid-container">
 
-      <figure class="hero-fashion-figure">
+      <figure class="hero-fashion-figure modal-img-style">
         <img src="/images/render-post-cards/hats-card-render.png" alt="">
       </figure>
 
@@ -61,12 +63,12 @@
         <P class="fashion-content-title"></p>
         <p class="fashion-content-text"></p>
       </div>
-      <figure class="fashion-content-image-1 fashion-content-image">
+      <figure class="fashion-content-image-1 fashion-content-image modal-img-style">
         <img src="" alt="">
       </figure>
 
  
-      <figure class="fashion-content-image-2 fashion-content-image">
+      <figure class="fashion-content-image-2 fashion-content-image modal-img-style">
         <img src="/images/render-post-cards/hats-card-render.png" alt="">
       </figure>
       <div class="fashion-content-text-2">
@@ -77,6 +79,12 @@
     </div>
 
   </main>
+
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="caption"></div>
+  </div>
 
   <footer>
     <div id="footer"></div>
