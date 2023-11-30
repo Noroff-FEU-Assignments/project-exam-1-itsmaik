@@ -79,3 +79,5 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
     }
 
   })
+
+  
