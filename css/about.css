@@ -65,3 +65,99 @@
 .about-icon {
   margin-right: 5%;
 }
+
+
+@media (min-width: 0) and (max-width: 767px) {
+  .container-about-me {
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .text-wrapper,
+  .list {
+    width: 100%;
+  }
+
+  .right-side .container-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-side .container-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .container-about-me .title p:nth-child(1),
+  .container-about-me .title p:nth-child(2),
+  .container-about-me .title p:nth-child(3),
+  .container-about-me .title p:nth-child(4) {
+    text-align: center;
+  }
+
+  .container-about-me .title p:nth-child(4),
+  .container-about-me .title p:nth-child(3) {
+    display: none;
+  }
+
+  .text-wrapper p {
+    text-align: justify;
+  }
+
+  .list-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .container-about-me {
+    flex-direction: column;
+  }
+
+  .container-about-me .title p:nth-child(1),
+  .container-about-me .title p:nth-child(2),
+  .container-about-me .title p:nth-child(3),
+  .container-about-me .title p:nth-child(4) {
+    text-align: center;
+  }
+
+  .container-about-me .title p:nth-child(4),
+  .container-about-me .title p:nth-child(3) {
+    display: none;
+  }
+
+  .text-wrapper p {
+    text-align: justify;
+  }
+
+  .list-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .container-image {
+    text-align: center;
+  }
+
+  .container-image img {
+    width: 100%;
+    height: 60rem;
+  }
+
+}
+
+@media (min-width: 0) and (max-width: 1180px) {
+  .text-wrapper {
+    width: 100%;
+  }
+}

@@ -1,7 +1,13 @@
 
 let allPosts = [];
 let currentCarouselIndex = 0;
+// let carouselBasePath;
 
+let carouselBasePath = {
+  '13': '../pages/editorial.html',
+  '10': '../pages/fashion-posts.html',
+  '16': '../pages/four-post-style.html',
+};
 
 function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderby, elementIdPrefix, basePath) {
   fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}`)
@@ -14,10 +20,11 @@ function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderb
     .then(posts => {
 
       if (structureType === 'carousel') {
+        // carouselBasePath = categoryBasePaths[categoryId] || '../pages/all-post.html';
         allPosts = posts;
         posts = posts.slice(0, 3);
       }
-      console.log(posts)
+
       posts.forEach((post, index) => {
 
         switch(structureType) {
@@ -94,7 +101,6 @@ function displayTrendingPost(post, index, elementIdPrefix, basePath) {
      textElement.textContent = heroTextElement.textContent;
     }
   }
-  console.log(textElement)
 
   if (anchorElement) {
     anchorElement.href = `${basePath}?slug=${post.slug}`;
@@ -107,6 +113,7 @@ const POSTS_PER_PAGE = 3;
 
 
 function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
+  console.log(basePath)
   const carouselContainer = document.querySelector('.carousel-1');
   carouselContainer.innerHTML = '';
   
@@ -163,7 +170,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
   // }
 
   if (anchorElement) {
-    anchorElement.href = `${basePath}?slug=${post.slug}`;
+    anchorElement.href = `${basePath}?slug=${posts.slug}`;
     
   }
 
@@ -177,7 +184,6 @@ const fashionBasePath = '../pages/fashion-posts.html';
 const trendingElementIdPrefix = 'trending';
 const trendingBasePath = '../pages/four-post-style.html';
 const carouselElementIdPrefix = 'carousel';
-const carouselBasePath = '';
 
 fetchAndDisplayPostsByCategory('13', 'editorial', 'asc', 'date', editorialElementIdPrefix, editorialBasePath);
 
@@ -189,7 +195,7 @@ fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementI
 
 
 
-// CAROUSELLE
+// CAROUSEL
 function goBack() {
   if (currentCarouselIndex > 0) {
     currentCarouselIndex -= 1;
