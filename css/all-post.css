@@ -11,16 +11,17 @@
   row-gap: 5%;
 }
 
-.all-post-card {
+.post-card {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.all-post-card img {
+.post-card img {
   margin-bottom: 5%;
+  max-height: 320px;
 }
 
-.all-post-h3 {
+.post-h3 {
   margin-bottom: 1%;
 }
