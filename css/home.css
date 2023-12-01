@@ -54,6 +54,7 @@
 .carousel-img {
   margin: 6% 0;
   max-height: 320px;
+  border: 4px solid rgba(0, 0, 0, 0.6);
 }
 
 .carousel-h2{
