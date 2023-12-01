@@ -59,6 +59,12 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
 
       if (editorialGallery) {
         const editorialGalleryElements = doc.querySelectorAll('.editorial-items > figure > img');
+        const editorialGalleryElementsFigure = doc.querySelectorAll('.editorial-items > figure');
+        console.log(editorialGalleryElementsFigure)
+        editorialGalleryElementsFigure.forEach(element => {
+          element.classList.add('modal-img-style');
+        })
+        
         console.log('editorialGalleryElements', editorialGalleryElements)
         
         editorialGalleryElements.forEach((img) => {

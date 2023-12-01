@@ -1,13 +1,7 @@
 
 let allPosts = [];
 let currentCarouselIndex = 0;
-// let carouselBasePath;
 
-let carouselBasePath = {
-  '13': '../pages/editorial.html',
-  '10': '../pages/fashion-posts.html',
-  '16': '../pages/four-post-style.html',
-};
 
 function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderby, elementIdPrefix, basePath) {
   fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}`)
@@ -20,13 +14,11 @@ function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderb
     .then(posts => {
 
       if (structureType === 'carousel') {
-        // carouselBasePath = categoryBasePaths[categoryId] || '../pages/all-post.html';
         allPosts = posts;
         posts = posts.slice(0, 3);
       }
 
       posts.forEach((post, index) => {
-
         switch(structureType) {
           case 'editorial':
             displayEditorialPost(post, index, elementIdPrefix, basePath);
@@ -113,17 +105,34 @@ const POSTS_PER_PAGE = 3;
 
 
 function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
-  console.log(basePath)
   const carouselContainer = document.querySelector('.carousel-1');
   carouselContainer.innerHTML = '';
+
   
   const startIndex = currentCarouselIndex * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
   const postsToShow = posts.slice(startIndex, endIndex);
   const specialIds = [60, 86, 91, 93];
- 
+
 
   postsToShow.forEach((post, index) => {
+    let currentPath;
+    const categoryId = post.categories.find(category => category !== 5);
+    
+    switch(categoryId) {
+      case 13:
+        currentPath = '../pages/editorial.html';
+        break;
+      case 10:
+        currentPath = '../pages/fashion-posts.html';
+        break;
+      case 16:
+        currentPath = '../pages/four-post-style.html';
+        break;
+      default:
+        console.error('Unknown structure type');
+      }
+
     const secondImage = post.acf.second_featured_image;
 
     const parser = new DOMParser();
@@ -145,7 +154,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
     }
     image.alt = post.title.rendered;
 
-    
+ 
     const title = document.createElement('h3');
     title.className = 'carousel-h3';
     title.textContent = post.title.rendered;
@@ -156,7 +165,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
 
     const readMoreLink = document.createElement('a');
     readMoreLink.className = 'btn-read-more';
-    readMoreLink.href = `${basePath}?slug=${post.slug}`;
+    readMoreLink.href = `${currentPath}?slug=${post.slug}`;
     readMoreLink.textContent = 'READ MORE';
 
     card.appendChild(image);
@@ -166,19 +175,19 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
 
     carouselContainer.appendChild(card);
 
+
+
+    // const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
+    // const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
+
+    
+  // if (anchorElement) {
+  //   anchorElement.href = `${carouselBasePath}?slug=${posts.slug}`;
+  // } 
   });
-
-  const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
-  const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
-
   // if (imgElement && post._embedded['wp:featuredmedia']) {
   //   imgElement.src = post._embedded['wp:featuredmedia'][0].source_url;
   // }
-
-  if (anchorElement) {
-    anchorElement.href = `${basePath}?slug=${posts.slug}`;
-    
-  }
 
 }
 
@@ -190,6 +199,7 @@ const fashionBasePath = '../pages/fashion-posts.html';
 const trendingElementIdPrefix = 'trending';
 const trendingBasePath = '../pages/four-post-style.html';
 const carouselElementIdPrefix = 'carousel';
+const carouselBasePath = '../pages/four-post-style.html';
 
 fetchAndDisplayPostsByCategory('13', 'editorial', 'asc', 'date', editorialElementIdPrefix, editorialBasePath);
 
@@ -197,18 +207,17 @@ fetchAndDisplayPostsByCategory('10', 'fashion', 'asc', 'date', fashionElementIdP
 
 fetchAndDisplayPostsByCategory('16', 'trending', 'asc', 'date', trendingElementIdPrefix, trendingBasePath);
 
-fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementIdPrefix, carouselBasePath );
+fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementIdPrefix, carouselBasePath);
 
 
-
-// CAROUSEL 
+// CAROUSEL SLIDE BTNS 
 function goBack() {
   if (currentCarouselIndex > 0) {
     currentCarouselIndex -= 1;
   } else  return;
 
   
-  displayCarouselPost(allPosts, carouselElementIdPrefix, carouselBasePath);
+  displayCarouselPost(allPosts, currentCarouselIndex, carouselElementIdPrefix, carouselBasePath);
 }
 
 function advanceCarousel() {
@@ -216,7 +225,7 @@ function advanceCarousel() {
     currentCarouselIndex += 1;
   } else return;
   
-  displayCarouselPost(allPosts, carouselElementIdPrefix, carouselBasePath);
+  displayCarouselPost(allPosts, currentCarouselIndex, carouselElementIdPrefix, carouselBasePath);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
