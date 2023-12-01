@@ -120,9 +120,11 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
   const startIndex = currentCarouselIndex * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
   const postsToShow = posts.slice(startIndex, endIndex);
+  const specialIds = [60, 86, 91, 93];
  
 
   postsToShow.forEach((post, index) => {
+    const secondImage = post.acf.second_featured_image;
 
     const parser = new DOMParser();
     const doc = parser.parseFromString(post.content.rendered, 'text/html');
@@ -136,6 +138,11 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
     image.className = 'carousel-img';
     image.id = `${elementIdPrefix}-img-${index + 1}`;
     image.src = post._embedded['wp:featuredmedia'][0].source_url;
+    if (specialIds.includes(post.id)) {
+      image.src = secondImage;
+    } else {
+      image.src = post._embedded['wp:featuredmedia'][0].source_url;
+    }
     image.alt = post.title.rendered;
 
     
@@ -161,8 +168,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
 
   });
 
-  
-  // const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
+  const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
   const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
 
   // if (imgElement && post._embedded['wp:featuredmedia']) {
@@ -195,7 +201,7 @@ fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementI
 
 
 
-// CAROUSEL
+// CAROUSEL 
 function goBack() {
   if (currentCarouselIndex > 0) {
     currentCarouselIndex -= 1;

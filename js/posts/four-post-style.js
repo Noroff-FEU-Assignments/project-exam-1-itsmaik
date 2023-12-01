@@ -28,6 +28,7 @@ fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&slug=${postSl
 
       if (postHeaderTitle) {
         const postHeaderTitleElement = specificPost.title.rendered;
+        document.querySelector('title').textContent = "Men-In-Fashion | " + specificPost.title.rendered
 
         if (postHeaderTitleElement) {
           postHeaderTitle.textContent = postHeaderTitleElement;
