@@ -175,19 +175,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
 
     carouselContainer.appendChild(card);
 
-
-
-    // const imgElement = document.getElementById(`${elementIdPrefix}-img-${index + 1}`);
-    // const anchorElement = document.getElementById(`${elementIdPrefix}-link-${index + 1}`);
-
-    
-  // if (anchorElement) {
-  //   anchorElement.href = `${carouselBasePath}?slug=${posts.slug}`;
-  // } 
   });
-  // if (imgElement && post._embedded['wp:featuredmedia']) {
-  //   imgElement.src = post._embedded['wp:featuredmedia'][0].source_url;
-  // }
 
 }
 
@@ -199,7 +187,7 @@ const fashionBasePath = '../pages/fashion-posts.html';
 const trendingElementIdPrefix = 'trending';
 const trendingBasePath = '../pages/four-post-style.html';
 const carouselElementIdPrefix = 'carousel';
-const carouselBasePath = '../pages/four-post-style.html';
+const carouselBasePath = '';
 
 fetchAndDisplayPostsByCategory('13', 'editorial', 'asc', 'date', editorialElementIdPrefix, editorialBasePath);
 

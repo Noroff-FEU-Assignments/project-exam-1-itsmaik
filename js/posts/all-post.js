@@ -19,7 +19,7 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
       console.log('postsAAAAAAAAAAA', posts)
       const postsToShow = posts;
 
-      const specialIds = [60, 86, 91, 93];
+      const specialIds = [60, 86, 91, 93, 28, 23];
   
       postsToShow.forEach((post, index) => {
         try {
