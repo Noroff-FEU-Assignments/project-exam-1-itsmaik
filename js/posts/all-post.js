@@ -1,5 +1,4 @@
 
-
 function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPrefix, basePath, perPage, page) {
   fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}&per_page=${perPage}`)
     .then(response => {
@@ -86,6 +85,12 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
       });
   
     })
+    .catch(error => {
+      throw new Error('Fetch Error:' + error)
+    }) 
+    .finally(() => {
+      document.querySelector('#loader-container').remove()
+    });
   
 }
   

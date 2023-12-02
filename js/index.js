@@ -38,7 +38,12 @@ function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderb
           }
     });
   })
-    .catch(error => console.error('Fetch error:', error));
+  .catch(error => {
+    throw new Error('Fetch Error:' + error)
+  }) 
+  .finally(() => {
+    document.querySelector('#loader-container').remove()
+  });
 }
 
 

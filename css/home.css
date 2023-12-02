@@ -166,6 +166,16 @@
   display: flex;
 }
 
+.editorial-images-container a {
+  display: block;
+}
+
+.editorial-images-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .editorial-images {
   transition: transform 0.3s ease;
 }
@@ -180,4 +190,104 @@
 
 .vertical-images {
   margin-right: 1em;
+}
+
+main {
+  position: relative;
+}
+@media (min-width: 0) and (max-width: 600px) {
+  .editorial-images-container {
+    flex-wrap: wrap;
+  }
+
+  .vertical-images {
+    margin-right: 0;
+  }
+
+  #editorial-link-3 {
+    width: 100%;
+  }
+
+  #editorial-img-3 {
+    margin-top: 1.5em;
+    height: auto;
+  }
+
+  .fashion-wrap {
+    padding: 0 2em;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .carousel-h2 {
+    width: min-content;
+    margin-right: 1em;
+  }
+
+  .carousel-1 {
+    flex-direction: column;
+  }
+
+  .carousel-arrows {
+    width: 10em;
+  }
+
+  .carousel-img {
+    max-height: 100%;
+  }
+}
+
+
+@media (min-width: 0) and (max-width: 1370px) {
+  .fashion-wrap {
+    padding: 0 2em;
+  }
+
+  .fashion-wrap a {
+    display: block;
+  }
+
+  .editorials {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .fashion-images {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+
+  .trending {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .carousel-1,
+  .carousel-head-line {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .carousel-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 0) and (max-width: 980px) {
+  .trending {
+    flex-direction: column;
+  }
+
+  .trending-text {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 1em;
+  }
+
+  #trending-img-1 {
+    display: none;
+  }
 }

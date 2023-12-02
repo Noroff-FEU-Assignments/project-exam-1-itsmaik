@@ -4,14 +4,15 @@
   background-image: url(/images/fashion-post/fashion-post-bg.png);
   object-fit: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .fashion-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 0.5fr 1fr 0.2fr 1fr;
-  row-gap: 3em;
-  padding: 6em 7em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 12em 1em;
+  padding: 6em 5%;
   border-top: 3px inset rgb(0, 0, 0, 0.1);
 }
 
@@ -108,4 +109,88 @@ figure img {
 
 .hero-text p {
   font-weight: 400;
+}
+
+@media (min-width: 0) and (max-width: 1180px) {
+  .fashion-grid-container {
+    padding-left: 2%;
+    padding-right: 2%;
+    row-gap: 6em;
+  }
+
+  .fashion-content-text-2, .fashion-content-text-1 {
+    width: 100%;
+  }
+
+  .fashion-content-text-1 {
+    margin-top: 5em;
+  }
+
+  .fashion-content-title {
+    font-size: 1.5rem;
+    margin-bottom: .6em;
+  }
+
+  .fashion-content-image-1,
+  .fashion-content-image-2 {
+    transform: none;
+  }
+}
+
+@media (min-width: 0) and (max-width: 980px) {
+  .hero-fashion-figure {
+    display: none;
+  }
+
+  .hero-fashion-text-container {
+    width: 100%;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .hero-fashion-text-container .hero-title p {
+    text-align: center;
+  }
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  .hero-fashion-text-container .hero-title p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .hero-fashion-text-container .hero-title p:nth-child(2) {
+    font-size: 1.8rem;
+  }
+
+  .hero-fashion-text-container .hero-title p:nth-child(3) {
+    font-size: 2.1rem;
+  }
+
+  .hero-fashion-text-container .hero-title p:nth-child(4) {
+    font-size: 2rem;
+  }
+
+  .fashion-grid-container {
+    padding-top: 3em;
+  }
+
+  .main-fashion-post {
+    background-size: 150% 32em;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 500px) {
+  .fashion-content-text-1 {
+    margin-top: 3em;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 374px) {
+  .fashion-content-text-1 {
+    margin-top: 2em;
+  }
 }

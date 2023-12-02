@@ -1,6 +1,7 @@
 .main-post {
   margin: 8% 7%;
   height: 100%;
+  position: relative;
 }
 
 .all-post-grid {

@@ -4,6 +4,7 @@
   object-fit: cover;
   background-repeat: no-repeat;
   background-size: 100% 20%;
+  position: relative;
 }
 
 .four-post-style-content {
@@ -18,11 +19,19 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 15em;
+  flex-wrap: wrap;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
 }
 
 .container-content-css {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .style-content-text {
@@ -90,4 +99,108 @@
   letter-spacing: 0.8px;
   margin-bottom: 0.8rem;
   line-height: 99%;
+}
+@media (min-width: 0) and (max-width: 1310px) {
+  .container-content-css {
+    justify-content: center;
+  }
+
+  .container-content-1, .container-content-2, .container-content-3, .container-content-4 {
+    width: 100%;
+  }
+
+  .style-content-text {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .container-content-css .container-content-1,
+  .container-content-css .container-content-2,
+  .container-content-css .container-content-3,
+  .container-content-css .container-content-4 {
+    order: 1;
+  }
+
+  .container-content-css figure {
+    order: 2;
+    margin-bottom: 3em;
+  }
+}
+
+@media (min-width: 0) and (max-width: 1365px) {
+  .hero-text-container {
+    justify-content: center;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-title {
+    margin-bottom: 2em;
+  }
+
+  .hero-title p {
+    text-align: center;
+  }
+
+  .hero-text p,
+  .hero-text .header-title {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1310px) and (max-width: 1365px) {
+  .main-four-post-style {
+    background-size: 120% 29%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 1300px) {
+  .main-four-post-style {
+    background-size: 140% 22%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  .four-post-style-content .hero-title p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .four-post-style-content .hero-title p:nth-child(2) {
+    font-size: 1.8rem;
+  }
+
+  .four-post-style-content .hero-title p:nth-child(3) {
+    font-size: 2.1rem;
+  }
+
+  .four-post-style-content .hero-title p:nth-child(4) {
+    font-size: 2rem;
+  }
+
+  .four-post-style-content {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+@media (min-width: 436px) and (max-width: 767px) {
+  .main-four-post-style {
+    background-size: 140% 20%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 435px) {
+  .main-four-post-style {
+    background-size: 150% 23%;
+  }
+
+  .hero-text-container {
+    margin-bottom: 10em;
+  }
+
+  .four-post-style-content {
+    padding-top: 3em;
+  }
 }
