@@ -106,7 +106,7 @@ function displayTrendingPost(post, index, elementIdPrefix, basePath) {
 
 
 //--------------------------------CAROUSEL-POSTS----------------------------------
-const POSTS_PER_PAGE = 3;
+let POSTS_PER_PAGE = 3;
 
 
 function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
@@ -204,6 +204,7 @@ fetchAndDisplayPostsByCategory('5', 'carousel', 'desc', 'date', carouselElementI
 
 
 // CAROUSEL SLIDE BTNS 
+
 function goBack() {
   if (currentCarouselIndex > 0) {
     currentCarouselIndex -= 1;
@@ -222,6 +223,7 @@ function advanceCarousel() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  updatePostsPerPage();
   
   const backButton = document.getElementById('prev-btn');
   const nextButton = document.getElementById('next-btn');
@@ -233,4 +235,21 @@ document.addEventListener('DOMContentLoaded', () => {
   nextButton.addEventListener('click', () => {
     advanceCarousel();
   });
+
+  function updatePostsPerPage() {
+    if (window.innerWidth < 980) {
+      POSTS_PER_PAGE = 2;
+    if (window.innerWidth < 600) {
+      POSTS_PER_PAGE = 1;
+    }  
+    } else {
+      POSTS_PER_PAGE = 3;
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    updatePostsPerPage();
+    displayCarouselPost(allPosts, currentCarouselIndex, carouselElementIdPrefix, carouselBasePath);
+  });
+
 });

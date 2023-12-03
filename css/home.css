@@ -83,7 +83,7 @@
 }
 
 #trending-img-1 {
-  margin: 8% 0;
+  margin: 1.6rem 0;
   display: inline-flex;
 }
 
@@ -195,6 +195,7 @@
 main {
   position: relative;
 }
+
 @media (min-width: 0) and (max-width: 600px) {
   .editorial-images-container {
     flex-wrap: wrap;
@@ -220,15 +221,6 @@ main {
     gap: 1.5em;
   }
 
-  .carousel-h2 {
-    width: min-content;
-    margin-right: 1em;
-  }
-
-  .carousel-1 {
-    flex-direction: column;
-  }
-
   .carousel-arrows {
     width: 10em;
   }
@@ -236,6 +228,30 @@ main {
   .carousel-img {
     max-height: 100%;
   }
+
+  .carousel-head-line {
+    flex-direction: column;
+  }
+
+  #trending-img-1 {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  #trending-title-1 {
+    font-size: 1.5rem;
+  }
+
+  .trending-text {
+    text-align: justify;
+  }
+
+  .fashion-title {
+    letter-spacing: 0;
+    font-size: 2rem;
+
+  }
+
 }
 
 
@@ -284,10 +300,22 @@ main {
   .trending-text {
     width: 100%;
     padding-left: 0;
-    padding-top: 1em;
+    padding-top: 0em;
   }
 
-  #trending-img-1 {
-    display: none;
+}
+
+@media (min-width: 0) and (max-width: 600px) {
+  .carousel-1 {
+    margin: 0 7em;
   }
+
+}
+
+@media (min-width: 0) and (max-width: 430px) {
+  .carousel-1 {
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+
 }
