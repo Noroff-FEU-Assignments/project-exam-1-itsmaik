@@ -84,12 +84,12 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #CCC;
+  background-color: #303030;
 }
 
 #loader {
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #FFA800;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -102,7 +102,6 @@ h2 {
   100% { transform: rotate(360deg); }
 }
 
-/* Adicione um estilo para esconder o loader quando nÃ£o estiver em uso */
 #loader.hidden {
   display: none;
 }

@@ -100,6 +100,7 @@ figure img {
   margin-bottom: 0.8rem;
   line-height: 99%;
 }
+
 @media (min-width: 0) and (max-width: 1310px) {
   .container-content-css {
     justify-content: center;
@@ -119,6 +120,10 @@ figure img {
   .container-content-css .container-content-3,
   .container-content-css .container-content-4 {
     order: 1;
+  }
+
+  .style-content-title {
+    
   }
 
   .container-content-css figure {
@@ -162,7 +167,7 @@ figure img {
   }
 }
 
-@media (min-width: 0) and (max-width: 768px) {
+@media (min-width: 0) and (max-width: 820px) {
   .four-post-style-content .hero-title p:nth-child(1) {
     font-size: 1.5rem;
   }
@@ -182,25 +187,29 @@ figure img {
   .four-post-style-content {
     padding-left: 2%;
     padding-right: 2%;
+    padding-top: 4rem;
   }
 }
 
-@media (min-width: 436px) and (max-width: 767px) {
+@media (min-width: 436px) and (max-width: 820px) {
   .main-four-post-style {
     background-size: 140% 20%;
   }
 }
 
 @media (min-width: 0) and (max-width: 435px) {
-  .main-four-post-style {
-    background-size: 150% 23%;
-  }
-
-  .hero-text-container {
-    margin-bottom: 10em;
-  }
 
   .four-post-style-content {
     padding-top: 3em;
+  }
+}
+
+@media (min-width: 0) and (max-width: 400px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    margin-bottom: 0.5em;
   }
 }

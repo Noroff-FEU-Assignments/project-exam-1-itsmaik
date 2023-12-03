@@ -1,5 +1,8 @@
+const postsPerPageInitial = 9;
+const postsPerPageMore = 3;
+let totalPostsLoaded = 0;
 
-function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPrefix, basePath, perPage, page) {
+function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPrefix, basePath, perPage) { 
   fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}&per_page=${perPage}`)
     .then(response => {
       if (!response.ok) {
@@ -12,7 +15,11 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
       if (posts.length === 0) return
   
       const allPostContainer = document.querySelector('.all-post-grid');
-      const postsToShow = posts;
+      const startIdx = totalPostsLoaded;
+      const endIdx = totalPostsLoaded + Math.min(postsPerPageInitial, posts.length);
+
+      const postsToShow = posts.slice(startIdx, endIdx);
+      console.log("posts", posts)
 
       const specialIds = [60, 86, 91, 93, 28, 23];
   
@@ -79,13 +86,20 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
         console.error("Error processing post:", post, error);
       }
       });
-  
+
+      totalPostsLoaded += postsToShow.length;
+
+      if (totalPostsLoaded >= 12) {
+        const viewMoreBtn = document.getElementById('view-more-posts');
+        viewMoreBtn.style.display = 'none';
+      }
     })
     .catch(error => {
       throw new Error('Fetch Error:' + error)
     }) 
     .finally(() => {
-      document.querySelector('#loader-container').remove()
+      const loaderContainer = document.querySelector('#loader-container');
+      loaderContainer && loaderContainer.remove();
     });
   
 }
@@ -93,17 +107,11 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
 const allPostsElementIdPrefix = 'post';
 const allPostsBasePath = '';
 
-let currentPage = 1;
-const postsPerPageInitial = 9;
-const postsPerPageMore = 3;
-
-fetchAndDisplayPostsByCategory('5', 'desc', 'date', allPostsElementIdPrefix, allPostsBasePath, postsPerPageInitial, currentPage);  
+fetchAndDisplayPostsByCategory('5', 'desc', 'date', allPostsElementIdPrefix, allPostsBasePath, postsPerPageInitial);  
 
 const viewMoreBtn = document.getElementById('view-more-posts');
 
 viewMoreBtn.addEventListener('click', () => {
-  currentPage++;
-  const updatedPerPageMore = postsPerPageInitial + ((currentPage - 1) * 3)
-  fetchAndDisplayPostsByCategory('5', 'desc', 'date', allPostsElementIdPrefix, allPostsBasePath, updatedPerPageMore, currentPage);
-}); 
-
+  const updatedPerPageMore = postsPerPageInitial + 3;
+  fetchAndDisplayPostsByCategory('5', 'desc', 'date', allPostsElementIdPrefix, allPostsBasePath, updatedPerPageMore);
+});
