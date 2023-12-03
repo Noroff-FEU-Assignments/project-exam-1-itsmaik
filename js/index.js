@@ -5,7 +5,7 @@ let currentCarouselIndex = 0;
 
 
 function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderby, elementIdPrefix, basePath) {
-  fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}`)
+  fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}&per_page=${12}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -123,7 +123,7 @@ function displayCarouselPost(posts, index, elementIdPrefix, basePath) {
   const startIndex = currentCarouselIndex * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
   const postsToShow = posts.slice(startIndex, endIndex);
-  const specialIds = [60, 86, 91, 93];
+  const specialIds = [60, 86, 91, 93, 28, 23];
 
 
   postsToShow.forEach((post, index) => {

@@ -87,7 +87,7 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
       }
       });
 
-      totalPostsLoaded += postsToShow.length;
+      totalPostsLoaded += posts.length;
 
       if (totalPostsLoaded >= 12) {
         const viewMoreBtn = document.getElementById('view-more-posts');
