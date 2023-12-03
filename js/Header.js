@@ -16,7 +16,7 @@ class Header {
     }
 
     document.querySelector("#logo").innerHTML = `<h1>${this.logoText}</h1>`;
-    // Add hamburger icon and close icon
+  
     const menuIcon = document.createElement('div');
     menuIcon.id = 'menu-icon';
     menuIcon.innerHTML = '&#9776;';

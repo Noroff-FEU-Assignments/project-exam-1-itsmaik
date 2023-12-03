@@ -1,4 +1,20 @@
 #footer {
   height: 88px;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-text {
+  color: white;
+}
+
+@media (min-width: 0) and (max-width: 430px) {
+  .footer-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+  }
+
 }
