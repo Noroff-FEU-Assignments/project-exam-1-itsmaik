@@ -3,6 +3,7 @@ let allPosts = [];
 let currentCarouselIndex = 0;
 
 
+
 function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderby, elementIdPrefix, basePath) {
   fetch(`https://meninfashion.itsmaik.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}&order=${order}&orderby=${orderby}`)
     .then(response => {
@@ -42,7 +43,12 @@ function fetchAndDisplayPostsByCategory(categoryId, structureType, order, orderb
     throw new Error('Fetch Error:' + error)
   }) 
   .finally(() => {
-    document.querySelector('#loader-container').remove()
+    
+    let loaderContainer = document.querySelector('#loader-container');
+    if  (loaderContainer) {
+    loaderContainer.remove();
+    }
+
   });
 }
 

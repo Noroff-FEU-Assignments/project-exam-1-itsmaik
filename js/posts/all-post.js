@@ -8,14 +8,10 @@ function fetchAndDisplayPostsByCategory(categoryId, order, orderby, elementIdPre
       return response.json();
     })
     .then(posts => {
-      console.log(posts);
+      
       if (posts.length === 0) return
-
-      console.log("perPage", perPage)
-      console.log("page", page)
   
       const allPostContainer = document.querySelector('.all-post-grid');
-      console.log('postsAAAAAAAAAAA', posts)
       const postsToShow = posts;
 
       const specialIds = [60, 86, 91, 93, 28, 23];
