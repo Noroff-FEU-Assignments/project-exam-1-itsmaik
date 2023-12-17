@@ -47,7 +47,7 @@ npm run start
 
 Check it live on the browser using Netlify:
 
-[Men-In-FAshion](https://starlit-macaron-409bb8.netlify.app/)
+[Men-In-Fashion](https://starlit-macaron-409bb8.netlify.app/)
 
 ## Contact
 
