@@ -53,7 +53,7 @@ Check it live on the browser using Netlify:
 
 [E-mail](itsmaik@icloud.com)
 
-[LinkedIn](linkedin.com/in/maik-helland-olsen-246338294)
+[LinkedIn](https://linkedin.com/in/maik-helland-olsen-246338294)
 
 [Instagram](https://www.instagram.com/itsmemaik_/)
 
