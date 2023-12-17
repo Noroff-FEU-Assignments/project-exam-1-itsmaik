@@ -51,7 +51,7 @@ Check it live on the browser using Netlify:
 
 ## Contact
 
-[E-mail](itsmaik@icloud.com)
+[E-mail](mailto:itsmaik@icloud.com)
 
 [LinkedIn](https://linkedin.com/in/maik-helland-olsen-246338294)
 
